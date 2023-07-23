@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: $default;
+    font-size: $rootFontSize;
+    font-family: $font-primary;
+}
+
+ul{
+    list-style: none;
+}

@@ -1,0 +1,31 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./default.scss";
+
+
+@function pxToRem($size, $units:rem) {
+    @return ($size / $rootFontSize)+$units ;
+}
+
+
+
+
+.container{    
+    width: 100%;
+    max-width: 969px;   
+    padding: 0 pxToRem(12);
+    position: relative;
+    margin: auto;
+    @media (min-width:615px) {
+        padding: 0 pxToRem(24);
+    }
+}  
+
+.page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@import "./footer.scss";
