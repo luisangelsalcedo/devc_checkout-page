@@ -6,23 +6,17 @@ interface Props{
     label: string;
     placeholder: string;
     name: string;
-    icon?: Icon;
     required?: boolean;
 }
 
-interface Icon{
-  src: string;
-  width: number;
-  height: number;
-  format: string
-}
 
-const {label, placeholder, name, icon, required} = Astro.props;
+
+const {label, placeholder, name, required} = Astro.props;
 ---
 <label class="input input-withicon">
     <span>{label}</span>
     <div class="input-box">
-        { icon && <img src={icon.src} /> }
+        <slot />
         <input class="form-control" type="text" name={name} placeholder={placeholder} required={required} />
     </div>
 </label>

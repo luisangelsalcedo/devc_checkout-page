@@ -1,11 +1,7 @@
 @import "./vars.scss";
 @import "./fonts.scss";
+@import "./functions.scss";
 @import "./default.scss";
-
-
-@function pxToRem($size, $units:rem) {
-    @return ($size / $rootFontSize)+$units ;
-}
 
 
 

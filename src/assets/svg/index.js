@@ -1,8 +1,8 @@
-import account from "./icon-account.svg";
-import city from "./icon-city.svg";
-import email from "./icon-email.svg";
-import home from "./icon-home.svg";
-import phone from "./icon-phone.svg";
-import postal from "./icon-postalcode.svg";
+import AccountIcon from "./AccountIcon.astro";
+import CityIcon from "./CityIcon.astro";
+import EmailIcon from "./EmailIcon.astro";
+import PhoneIcon from "./PhoneIcon.astro";
+import HomeIcon from "./HomeIcon.astro";
+import PostalIcon from "./PostalIcon.astro";
 
-export { account, city, email, home, phone, postal }
+export { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon }

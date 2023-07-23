@@ -1,6 +1,6 @@
 ---
 import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton } from "../components";
-import { email, phone, account, home, city, postal  } from "../assets/svg";
+import { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon  } from "../assets/svg";
 import { contryList } from "../helpers/contries";
 ---
 <form>
@@ -8,58 +8,64 @@ import { contryList } from "../helpers/contries";
         <h3>Contact information</h3>
 
         <InputWithIcon 
-            icon={email} 
             label="E-mail" 
             name="email" 
             placeholder="Enter your email..." 
-            required="true"/>
+            required="true">
+            <EmailIcon />
+        </InputWithIcon>
 
         <InputWithIcon 
-            icon={phone} 
             label="Phone" 
             name="phone" 
             placeholder="Enter your phone..." 
-            required="true"/>
+            required="true">
+            <PhoneIcon />
+        </InputWithIcon>
     </section>
 
     <section>
         <h3>Shipping address</h3>
 
-        <InputWithIcon 
-            icon={account} 
+        <InputWithIcon            
             label="Full name" 
             name="fullname" 
             placeholder="Your name.." 
-            required="true"/>
+            required="true">
+            <AccountIcon />
+        </InputWithIcon>
 
         <InputWithIcon 
-            icon={home} 
             label="Address" 
             name="address" 
             placeholder="Your address.." 
-            required="true"/>
+            required="true">
+            <HomeIcon />
+        </InputWithIcon>
 
         <InputWithIcon 
-            icon={city} 
             label="City" 
             name="city" 
             placeholder="Your city.." 
-            required="true"/>
+            required="true">
+            <CityIcon />
+        </InputWithIcon>
 
         <SelectWithIcon 
             label="Country" 
             name="country" 
-            placeholder="Your country.." 
-            icon={city} 
-            list={contryList}
-        />
+            placeholder="Your country.."   
+            list={contryList}>
+            <CityIcon />
+        </SelectWithIcon>
 
         <InputWithIcon 
-            icon={postal} 
             label="Postal code" 
             name="postalcode" 
             placeholder="Your postal code.." 
-            required="true"/>
+            required="true">
+            <PostalIcon />
+        </InputWithIcon>
     </section>
 
     <section>

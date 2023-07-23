@@ -1,11 +1,15 @@
 import { defineConfig } from 'astro/config';
-import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
     server:{
-        port:5000,
+        port:3000,
         host:true
     },
-    integrations: [image()],
+    outDir: './build',
+    base: '/devc_checkout-page/',
+    build: {
+        assets: 'assets'
+    }
+
 });

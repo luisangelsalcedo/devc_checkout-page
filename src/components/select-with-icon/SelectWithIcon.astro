@@ -1,9 +1,6 @@
 ---
 import './SelectWithIcon.scss';
 
-
-
-
 interface Props{
     label: string;
     placeholder: string;
@@ -26,7 +23,7 @@ const {label, placeholder, name, list, icon, required} = Astro.props;
 <label class="input input-withicon input-list">
     <span>{label}</span>
     <div class="input-box">
-        { icon && <img src={icon.src} /> }
+        <slot />
         <select name="" class="form-control not_chosen" required={required}>
             <option class="form-control">Your country..</option>
             {
