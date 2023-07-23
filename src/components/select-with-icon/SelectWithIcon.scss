@@ -1,0 +1,25 @@
+@import "../../assets/sass/vars.scss";
+@import "../../assets/sass/functions.scss";
+
+.input{
+    &-list{
+        .form-control{
+            border: 0;
+            outline: none;
+            width: 100%;
+
+            &.not_chosen{
+                color: $grey3;
+                option{
+                    color: $default;
+                }
+            }
+
+            &:focus{
+                option:nth-child(1){
+                    display: none;
+                }
+            }
+        }
+    }
+}

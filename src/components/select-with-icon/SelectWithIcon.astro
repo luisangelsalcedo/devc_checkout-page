@@ -1,0 +1,45 @@
+---
+import './SelectWithIcon.scss';
+
+
+
+
+interface Props{
+    label: string;
+    placeholder: string;
+    name: string;
+    list?:string[];
+    icon?: Icon;
+    required?: boolean;
+}
+
+interface Icon{
+  src: string;
+  width: number;
+  height: number;
+  format: string
+}
+
+const {label, placeholder, name, list, icon, required} = Astro.props;
+---
+
+<label class="input input-withicon input-list">
+    <span>{label}</span>
+    <div class="input-box">
+        { icon && <img src={icon.src} /> }
+        <select name="" class="form-control not_chosen" required={required}>
+            <option class="form-control">Your country..</option>
+            {
+                list?.map(contry => <option value={contry}>{contry}</option>)
+            }
+        </select>
+    </div>
+</label>
+
+
+<script>
+    const notChosen = document.querySelector("select.not_chosen");
+    notChosen?.addEventListener("change", ({target}:any)=>{
+        target.classList.remove("not_chosen")
+    })
+</script>

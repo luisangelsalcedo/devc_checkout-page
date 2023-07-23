@@ -1,0 +1,12 @@
+---
+import "./CheckBox.scss";
+interface Props {
+    required?: boolean;
+}
+const {required} = Astro.props
+---
+<label class="checkbox">
+    <input type="checkbox" name="check" />
+    <div class="check"></div>
+    <span><slot /></span>
+</label>

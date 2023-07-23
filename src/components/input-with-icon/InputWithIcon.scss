@@ -1,0 +1,37 @@
+@import "../../assets/sass/vars.scss";
+@import "../../assets/sass/functions.scss";
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: pxToRem(16);
+
+    span{
+        font-size: pxToRem(10);
+        margin-bottom: pxToRem(5);
+    }
+
+    .form-control{
+        border: 0;
+        outline: none;
+        background-color: transparent;
+        font-size: pxToRem(12);
+        font-weight: 600;
+        font-family: $font-primary;
+        color: $grey1;
+
+        
+    }
+    
+    &-box{
+        border: 1.5px solid $grey3;
+        border-radius: pxToRem(12);
+        padding: pxToRem(10);
+        display: flex;
+        align-items: center;
+
+        img{
+            margin-right: pxToRem(10);
+        }
+    }
+}

@@ -1,12 +1,13 @@
 *{
+    font-family: $font-primary;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-weight: 600;
 }
 body{
     color: $default;
     font-size: $rootFontSize;
-    font-family: $font-primary;
 }
 
 ul{

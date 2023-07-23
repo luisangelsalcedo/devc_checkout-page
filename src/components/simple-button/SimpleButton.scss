@@ -1,0 +1,14 @@
+@import "../../assets/sass/vars.scss";
+@import "../../assets/sass/functions.scss";
+
+.simplebutton{
+    border: 0;
+    outline: none;
+    background-color: $orange;
+    font-size: pxToRem(16);
+    color: white;
+    padding: pxToRem(17) pxToRem(45); 
+    border-radius: pxToRem(12);
+    margin-top: pxToRem(20);
+    float: right;
+}

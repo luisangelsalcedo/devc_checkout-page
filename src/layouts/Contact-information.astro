@@ -1,0 +1,77 @@
+---
+import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton } from "../components";
+import { email, phone, account, home, city, postal  } from "../assets/svg";
+import { contryList } from "../helpers/contries";
+---
+<form>
+    <section>
+        <h3>Contact information</h3>
+
+        <InputWithIcon 
+            icon={email} 
+            label="E-mail" 
+            name="email" 
+            placeholder="Enter your email..." 
+            required="true"/>
+
+        <InputWithIcon 
+            icon={phone} 
+            label="Phone" 
+            name="phone" 
+            placeholder="Enter your phone..." 
+            required="true"/>
+    </section>
+
+    <section>
+        <h3>Shipping address</h3>
+
+        <InputWithIcon 
+            icon={account} 
+            label="Full name" 
+            name="fullname" 
+            placeholder="Your name.." 
+            required="true"/>
+
+        <InputWithIcon 
+            icon={home} 
+            label="Address" 
+            name="address" 
+            placeholder="Your address.." 
+            required="true"/>
+
+        <InputWithIcon 
+            icon={city} 
+            label="City" 
+            name="city" 
+            placeholder="Your city.." 
+            required="true"/>
+
+        <SelectWithIcon 
+            label="Country" 
+            name="country" 
+            placeholder="Your country.." 
+            icon={city} 
+            list={contryList}
+        />
+
+        <InputWithIcon 
+            icon={postal} 
+            label="Postal code" 
+            name="postalcode" 
+            placeholder="Your postal code.." 
+            required="true"/>
+    </section>
+
+    <section>
+        <CheckBoxComponent required="true">Save this information for next time</CheckBoxComponent>
+        <SimpleButton>Continue</SimpleButton>
+    </section>
+</form>
+<style>
+    form section:nth-child(1){
+        margin-bottom: 45px;
+    }
+    h3{
+        margin-bottom: 12px;
+    }
+</style>
