@@ -1,0 +1,26 @@
+---
+import "./ArticleItem.scss";
+import { Counter } from "../";
+import { Article } from "../../types";
+
+interface Props {
+    data: Article;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="checkout-list-item">
+    <div class="checkout-list-item-image">
+        <img src={data.image} alt={data.label} />
+    </div>
+    <div class="checkout-list-item-description">
+        <div>
+            <h3 class="checkout-list-item-label">{data.label}</h3>
+            <div class="checkout-list-item-price">
+                <h3>${data.price}<small>${data.oldPrice}</small></h3>
+            </div>
+        </div>
+        <Counter id="counter1"/>
+    </div>
+</div>

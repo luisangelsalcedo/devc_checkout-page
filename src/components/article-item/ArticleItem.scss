@@ -1,0 +1,47 @@
+@import "../../assets/sass/vars.scss";
+@import "../../assets/sass/functions.scss";
+
+.checkout-list-item{
+    display: flex;
+    margin-bottom: pxToRem(28.5);
+
+    & > div{
+        flex-shrink: 0;
+    }
+    &-image{
+        width: 123px;
+        height: 125px;
+        border-radius: pxToRem(13);
+        overflow: hidden;
+        margin-right: pxToRem(20);
+
+        img{
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &-description{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    &-label{
+        font-size: pxToRem(12);
+        font-weight: 600;
+        margin-bottom: pxToRem(8);
+    }
+
+    &-price{
+        font-size: pxToRem(14);
+        color: $orange;
+
+        small{
+            font-size: pxToRem(10);
+            text-decoration:line-through;
+            padding-left: pxToRem(13);
+            color: $default;
+        }
+    }
+}

@@ -1,1 +1,29 @@
-Checkout.astro
+---
+import { ArticleItem } from "../components/";
+import { Article } from "../types";
+
+
+const articles: Article [] = [
+    {label: "Vintage Backbag", price:54.99, oldPrice:94.99, image: "photo1.png"},
+    {label: "Levi Shoes", price:74.99, oldPrice:124.99, image: "photo2.png"}
+]
+---
+<div class="checkout">
+    
+    <div class="checkout-list">
+        {
+            articles.map(article => <ArticleItem data={article}/>)
+        }              
+    </div>
+
+    <table class="checkout-prices">
+        <tr>
+            <td>Shipping</td>
+            <td>$19</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>$148.98</td>
+        </tr>
+    </table>
+</div>

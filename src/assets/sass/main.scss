@@ -24,4 +24,42 @@
     justify-content: space-between;
 }
 
+header{
+    padding: pxToRem(32) 0 pxToRem(20) 0;
+    h1{
+        font-size: pxToRem(24);
+    }
+}
+
+.checkout{
+    background-color: $grey6;
+    border-radius: pxToRem(12);
+    padding: pxToRem(30) pxToRem(26.5) pxToRem(15) pxToRem(26.5);
+    margin-bottom: pxToRem(39);
+
+    table{
+        font-size: pxToRem(14);
+    }
+}
+
+table{
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    tr{
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        
+        td:last-child{
+            text-align: right;
+        }
+    }
+    td, th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid $grey4;
+    }
+}
+
 @import "./footer.scss";

@@ -1,6 +1,6 @@
 ---
 import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton } from "../components";
-import { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon  } from "../assets/svg";
+import { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon  } from "../components/icons";
 import { contryList } from "../helpers/contries";
 ---
 <form>
@@ -11,7 +11,7 @@ import { contryList } from "../helpers/contries";
             label="E-mail" 
             name="email" 
             placeholder="Enter your email..." 
-            required="true">
+            required={true}>
             <EmailIcon />
         </InputWithIcon>
 
@@ -19,7 +19,7 @@ import { contryList } from "../helpers/contries";
             label="Phone" 
             name="phone" 
             placeholder="Enter your phone..." 
-            required="true">
+            required={true}>
             <PhoneIcon />
         </InputWithIcon>
     </section>
@@ -31,7 +31,7 @@ import { contryList } from "../helpers/contries";
             label="Full name" 
             name="fullname" 
             placeholder="Your name.." 
-            required="true">
+            required={true}>
             <AccountIcon />
         </InputWithIcon>
 
@@ -39,7 +39,7 @@ import { contryList } from "../helpers/contries";
             label="Address" 
             name="address" 
             placeholder="Your address.." 
-            required="true">
+            required={true}>
             <HomeIcon />
         </InputWithIcon>
 
@@ -47,7 +47,7 @@ import { contryList } from "../helpers/contries";
             label="City" 
             name="city" 
             placeholder="Your city.." 
-            required="true">
+            required={true}>
             <CityIcon />
         </InputWithIcon>
 
@@ -55,6 +55,7 @@ import { contryList } from "../helpers/contries";
             label="Country" 
             name="country" 
             placeholder="Your country.."   
+            required={true}
             list={contryList}>
             <CityIcon />
         </SelectWithIcon>
@@ -63,13 +64,13 @@ import { contryList } from "../helpers/contries";
             label="Postal code" 
             name="postalcode" 
             placeholder="Your postal code.." 
-            required="true">
+            required={true}>
             <PostalIcon />
         </InputWithIcon>
     </section>
 
     <section>
-        <CheckBoxComponent required="true">Save this information for next time</CheckBoxComponent>
+        <CheckBoxComponent required={true}>Save this information for next time</CheckBoxComponent>
         <SimpleButton>Continue</SimpleButton>
     </section>
 </form>

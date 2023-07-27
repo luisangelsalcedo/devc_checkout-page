@@ -1,0 +1,35 @@
+@import "../../assets/sass/vars.scss";
+@import "../../assets/sass/functions.scss";
+
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 123px;
+    height: 50px;
+    border: solid 1.5px $grey3;
+    border-radius: pxToRem(12);
+    padding: 0 pxToRem(10);
+
+    h4{
+        font-size: pxToRem(16);
+        font-weight: 600;
+    }
+
+    button{
+        width: 19.4px;
+        height: 19.4px;
+        color: $grey3;
+        font-size: pxToRem(17);
+        background-color: $grey5;
+        border-radius: pxToRem(4);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover{
+            background-color: $grey4;
+        }
+    }
+}
