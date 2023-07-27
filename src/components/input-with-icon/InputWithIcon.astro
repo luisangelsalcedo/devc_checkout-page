@@ -7,16 +7,17 @@ interface Props{
     placeholder: string;
     name: string;
     required?: boolean;
+    type?: any;
 }
 
 
 
-const {label, placeholder, name, required} = Astro.props;
+const {label, placeholder, name, type = "text", required} = Astro.props;
 ---
 <label class="input input-withicon">
     <span>{label}</span>
     <div class="input-box">
         <slot />
-        <input class="form-control" type="text" name={name} placeholder={placeholder} required={required} />
+        <input class="form-control" type={type} name={name} placeholder={placeholder} required={required} />
     </div>
 </label>

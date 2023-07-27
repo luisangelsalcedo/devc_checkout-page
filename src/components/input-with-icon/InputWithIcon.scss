@@ -18,9 +18,18 @@
         font-size: pxToRem(12);
         font-weight: 600;
         font-family: $font-primary;
+        flex: 1;
         color: $grey1;
 
-        
+        &[type=number]::-webkit-inner-spin-button, 
+        &[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+        }
+
+        &[type=number] {
+            -moz-appearance:textfield;
+        }
     }
     
     &-box{
@@ -34,4 +43,5 @@
             margin-right: pxToRem(10);
         }
     }
+    
 }
