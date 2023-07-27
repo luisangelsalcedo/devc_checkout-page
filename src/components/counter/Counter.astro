@@ -1,10 +1,37 @@
 ---
 import "./Counter.scss";
+interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+let defaultValue = 1;
 ---
 
-<div class="counter">
+<div class="counter" data-id={id}>
     <button data-operation="subtract">-</button>
-    <h4 class="counter-view">1</h4>
+    <input type="number" class="counter-view" value={defaultValue} />
     <button data-operation="add">+</button>
 </div>
 
+<script>
+    const bottons = document.querySelectorAll(`.counter button`)
+    bottons.forEach(button => {
+        button.addEventListener("click", (e:any) => {
+            const button = e.target;
+            const parent = button.parentNode;
+            const view = parent.querySelector("input");
+            const operation = button.getAttribute("data-operation");
+            
+            
+            let value = Number(view.value);
+
+            value += operation === "add" ? +1 : -1;
+            view.value = value;
+            
+            console.log(value)
+        })
+    })
+
+
+</script>

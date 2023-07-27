@@ -21,6 +21,6 @@ const { data } = Astro.props;
                 <h3>${data.price}<small>${data.oldPrice}</small></h3>
             </div>
         </div>
-        <Counter id="counter1"/>
+        <Counter id={data.id}/>
     </div>
 </div>
