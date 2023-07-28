@@ -8,8 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="./devchallenges.png">
 		<meta name="generator" content="Astro v2.9.1">
 		<title>Checkout page - luisangelsalcedo</title>
-	<link rel="stylesheet" href="/devc_checkout-page/assets/index.abdd8a73.css" /><script type="module">const l=document.querySelector("form");l.addEventListener("submit",async t=>{t.preventDefault();const e=new FormData(t.currentTarget);try{const o=await i(e);s(o)}catch(o){s(o)}});function i(t){return new Promise((e,o)=>{for(const c of t.entries()){const[n,a]=c;a===""&&o(`❌ Validation fails
-⚠️ ${n} field is empty`)}e("✅ Validation succeeds")})}function s(t){const e=document.querySelector(".modal");e.classList.add("show"),e.querySelector(".modal-box").innerHTML=t,u()}function u(){const t=document.querySelector(".modal"),e=setTimeout(()=>{t.classList.remove("show"),clearInterval(e)},3e3)}const d=document.querySelectorAll(".counter button");d.forEach(t=>{t.addEventListener("click",e=>{const o=e.target,n=o.parentNode.querySelector("input"),a=o.getAttribute("data-operation");let r=Number(n.value);r+=a==="add"?1:-1,n.value=r,console.log(r)})});
+	<link rel="stylesheet" href="/devc_checkout-page/assets/index.025e23ce.css" /><script type="module">const i=document.querySelector("form");i.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.currentTarget);try{const o=await l(t);c(o)}catch(o){c(o)}});function l(e){return new Promise((t,o)=>{for(const s of e.entries()){const[n,a]=s;a===""&&o(`❌ Validation fails, ${n} field is empty`)}t("✅ Validation succeeds")})}function c(e){const t=document.querySelector(".modal");t.classList.add("show"),t.classList.remove("hide"),t.querySelector(".modal-box").innerHTML=e,d()}function d(){const e=document.querySelector(".modal"),t=setTimeout(()=>{e.classList.add("hide"),e.classList.remove("show"),clearInterval(t)},3e3)}const u=document.querySelectorAll(".counter button");u.forEach(e=>{e.addEventListener("click",t=>{const o=t.target,n=o.parentNode.querySelector("input"),a=o.getAttribute("data-operation");let r=Number(n.value);r+=a==="add"?1:-1,n.value=r,console.log(r)})});
 </script></head>
 	<body>
 		
@@ -196,8 +195,9 @@
 </button>
     </section>
 </form>
-<div class="modal astro-EU7ZH6QM">
-    <div class="modal-box astro-EU7ZH6QM">message</div>
+
+<div class="modal">
+    <div class="modal-box">message</div>
 </div>
 				</main>
 			</div>
