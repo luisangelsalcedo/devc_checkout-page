@@ -4,5 +4,6 @@ import SelectWithIcon from "./select-with-icon/SelectWithIcon.astro";
 import SimpleButton from "./simple-button/SimpleButton.astro";
 import Counter from "./counter/Counter.astro";
 import ArticleItem from "./article-item/ArticleItem.astro";
+import Modal from "./modal/Modal.astro";
 
-export {CheckBoxComponent, InputWithIcon, SimpleButton, SelectWithIcon, Counter, ArticleItem}
+export {CheckBoxComponent, InputWithIcon, SimpleButton, SelectWithIcon, Counter, ArticleItem, Modal}

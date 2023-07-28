@@ -1,5 +1,5 @@
 ---
-import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton } from "../components";
+import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton, Modal } from "../components";
 import { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon  } from "../components/icons";
 import { contryList } from "../helpers/contries";
 ---
@@ -76,10 +76,8 @@ import { contryList } from "../helpers/contries";
         <SimpleButton>Continue</SimpleButton>
     </section>
 </form>
-<div class="modal">
-    <div class="modal-box">message</div>
-</div>
 
+<Modal />
 
 <style>
     form section:nth-child(1){
@@ -88,14 +86,7 @@ import { contryList } from "../helpers/contries";
     h3{
         margin-bottom: 12px;
     }
-    .modal{
-        display: none;
-    }
-    .modal.show{
-        display: block;
-    }
 </style>
-
 <script>
     const form = document.querySelector("form");
 
@@ -117,7 +108,7 @@ import { contryList } from "../helpers/contries";
             for (const input of fd.entries()) {
                 const [key, value] = input;
                 // simple validation
-                if (value === "") reject(`❌ Validation fails\n⚠️ ${key} field is empty`);
+                if (value === "") reject(`❌ Validation fails, ${key} field is empty`);
             }
             resolve("✅ Validation succeeds");
         })
@@ -126,6 +117,7 @@ import { contryList } from "../helpers/contries";
     function showModal(message){
         const modal = document.querySelector(".modal");
         modal.classList.add("show");
+        modal.classList.remove("hide");
         modal.querySelector(".modal-box").innerHTML = message;
         hideModal();
     }
@@ -133,6 +125,7 @@ import { contryList } from "../helpers/contries";
     function hideModal(){
         const modal = document.querySelector(".modal");
         const timer = setTimeout(() => {
+            modal.classList.add("hide");
             modal.classList.remove("show");
             clearInterval(timer)
         }, 3000);
