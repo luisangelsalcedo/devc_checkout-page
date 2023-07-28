@@ -24,7 +24,7 @@ const {label, placeholder, name, list, icon, required} = Astro.props;
     <span>{label}</span>
     <div class="input-box">
         <slot />
-        <select name="" class="form-control not_chosen" required={required}>
+        <select name="" class="form-control not_chosen" required={required} >
             <option class="form-control" value="">Your country..</option>
             {
                 list?.map(contry => <option value={contry}>{contry}</option>)

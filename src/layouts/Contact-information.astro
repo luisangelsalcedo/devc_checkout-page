@@ -12,7 +12,7 @@ import { contryList } from "../helpers/contries";
             name="email"
             placeholder="Enter your email..." 
             type="email"
-            required={true}>
+            >
             <EmailIcon />
         </InputWithIcon>
 
@@ -21,7 +21,7 @@ import { contryList } from "../helpers/contries";
             name="phone" 
             placeholder="Enter your phone..." 
             type="number"
-            required={true}>
+            >
             <PhoneIcon />
         </InputWithIcon>
     </section>
@@ -33,7 +33,7 @@ import { contryList } from "../helpers/contries";
             label="Full name" 
             name="fullname" 
             placeholder="Your name.." 
-            required={true}>
+            >
             <AccountIcon />
         </InputWithIcon>
 
@@ -41,7 +41,7 @@ import { contryList } from "../helpers/contries";
             label="Address" 
             name="address" 
             placeholder="Your address.." 
-            required={true}>
+            >
             <HomeIcon />
         </InputWithIcon>
 
@@ -49,7 +49,7 @@ import { contryList } from "../helpers/contries";
             label="City" 
             name="city" 
             placeholder="Your city.." 
-            required={true}>
+            >
             <CityIcon />
         </InputWithIcon>
 
@@ -57,7 +57,7 @@ import { contryList } from "../helpers/contries";
             label="Country" 
             name="country" 
             placeholder="Your country.."   
-            required={true}
+            
             list={contryList}>
             <CityIcon />
         </SelectWithIcon>
@@ -66,16 +66,21 @@ import { contryList } from "../helpers/contries";
             label="Postal code" 
             name="postalcode" 
             placeholder="Your postal code.." 
-            required={true}>
+            >
             <PostalIcon />
         </InputWithIcon>
     </section>
 
     <section>
-        <CheckBoxComponent required={true}>Save this information for next time</CheckBoxComponent>
+        <CheckBoxComponent >Save this information for next time</CheckBoxComponent>
         <SimpleButton>Continue</SimpleButton>
     </section>
 </form>
+<div class="modal">
+    <div class="modal-box">message</div>
+</div>
+
+
 <style>
     form section:nth-child(1){
         margin-bottom: 45px;
@@ -83,4 +88,53 @@ import { contryList } from "../helpers/contries";
     h3{
         margin-bottom: 12px;
     }
+    .modal{
+        display: none;
+    }
+    .modal.show{
+        display: block;
+    }
 </style>
+
+<script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async (e:any)=>{
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        // console.log(Object.fromEntries(formData))
+        try {
+            const response = await validationData(formData)
+            showModal(response)
+            // send data 
+        } catch (err) {
+            showModal(err)
+        }        
+    })
+
+    function validationData(fd){
+        return new Promise((resolve, reject) => {
+            for (const input of fd.entries()) {
+                const [key, value] = input;
+                // simple validation
+                if (value === "") reject(`❌ Validation fails\n⚠️ ${key} field is empty`);
+            }
+            resolve("✅ Validation succeeds");
+        })
+    }
+
+    function showModal(message){
+        const modal = document.querySelector(".modal");
+        modal.classList.add("show");
+        modal.querySelector(".modal-box").innerHTML = message;
+        hideModal();
+    }
+
+    function hideModal(){
+        const modal = document.querySelector(".modal");
+        const timer = setTimeout(() => {
+            modal.classList.remove("show");
+            clearInterval(timer)
+        }, 3000);
+    }
+</script>
