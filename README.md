@@ -22,13 +22,14 @@
 
 ## Overview
 
-![screenshot](./assets/img/preview.png)
+![screenshot](./public/preview.png)
 
 ## Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [Astro](https://docs.astro.build/en/getting-started/)
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 - [Sass](https://sass-lang.com/)
 
 
@@ -44,5 +45,5 @@ $ git clone https://github.com/luisangelsalcedo/devc_checkout-page
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
