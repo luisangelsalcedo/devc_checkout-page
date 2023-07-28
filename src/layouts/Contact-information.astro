@@ -3,6 +3,7 @@ import { CheckBoxComponent, InputWithIcon, SelectWithIcon, SimpleButton, Modal }
 import { EmailIcon, PhoneIcon, AccountIcon, HomeIcon, CityIcon, PostalIcon  } from "../components/icons";
 import { contryList } from "../helpers/contries";
 ---
+
 <form>
     <section>
         <h3>Contact information</h3>
@@ -53,22 +54,24 @@ import { contryList } from "../helpers/contries";
             <CityIcon />
         </InputWithIcon>
 
-        <SelectWithIcon 
-            label="Country" 
-            name="country" 
-            placeholder="Your country.."   
-            
-            list={contryList}>
-            <CityIcon />
-        </SelectWithIcon>
+        <div class="flex">
+            <SelectWithIcon 
+                label="Country" 
+                name="country" 
+                placeholder="Your country.."   
+                
+                list={contryList}>
+                <CityIcon />
+            </SelectWithIcon>
 
-        <InputWithIcon 
-            label="Postal code" 
-            name="postalcode" 
-            placeholder="Your postal code.." 
-            >
-            <PostalIcon />
-        </InputWithIcon>
+            <InputWithIcon 
+                label="Postal code" 
+                name="postalcode" 
+                placeholder="Your postal code.." 
+                >
+                <PostalIcon />
+            </InputWithIcon>
+        </div>
     </section>
 
     <section>
@@ -79,14 +82,7 @@ import { contryList } from "../helpers/contries";
 
 <Modal />
 
-<style>
-    form section:nth-child(1){
-        margin-bottom: 45px;
-    }
-    h3{
-        margin-bottom: 12px;
-    }
-</style>
+
 <script>
     const form = document.querySelector("form");
 
@@ -128,6 +124,6 @@ import { contryList } from "../helpers/contries";
             modal.classList.add("hide");
             modal.classList.remove("show");
             clearInterval(timer)
-        }, 3000);
+        }, 2000);
     }
 </script>

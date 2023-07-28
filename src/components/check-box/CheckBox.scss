@@ -22,16 +22,20 @@
         font-weight: 500;
     }
 
+    div{
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        flex-shrink: 0;
+        border: solid 1.5px $grey3;
+        margin-right: pxToRem(8);
+    }
+
     input[type=checkbox]{
         display: none;
 
         & + div{
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            flex-shrink: 0;
-            border: solid 1.5px $grey3;
-            margin-right: pxToRem(8);
+            
             background-size: cover;
             overflow: hidden;
             position: relative;

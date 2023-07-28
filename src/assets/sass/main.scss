@@ -12,8 +12,13 @@
     padding: 0 pxToRem(12);
     position: relative;
     margin: auto;
-    @media (min-width:615px) {
+
+    @media (min-width:750px) {
         padding: 0 pxToRem(24);
+    }
+
+    @media (min-width:1020px) {
+        max-width: 1020px; 
     }
 }  
 
@@ -28,9 +33,114 @@ header{
     padding: pxToRem(32) 0 pxToRem(20) 0;
     h1{
         font-size: pxToRem(24);
+
+        @media (min-width:910px){
+            font-size: pxToRem(36);
+        }
     }
 }
 
+.content{
+    .container{
+        @media (min-width:750px) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            column-gap: pxToRem(24);
+        }
+        @media (min-width:910px) {
+            column-gap: pxToRem(112);
+        }
+
+        main{
+            @media (min-width:910px) {
+                .input{
+                    margin-bottom: pxToRem(20);
+                    span{
+                        font-size: pxToRem(12);
+                        margin-bottom: pxToRem(7);
+                    }
+                    .form-control{
+                        font-size: pxToRem(16);
+                    }
+                    &-box{
+                        height: 56px;
+                        svg{
+                            margin-right: pxToRem(16);
+                            width: 24px;
+                        }
+                    }
+                }
+                form{
+                    section:nth-child(1){
+                        margin-bottom: pxToRem(58);
+                    }
+                    h3{
+                        font-size: pxToRem(18);
+                    }
+
+                    .flex{
+                        column-gap: pxToRem(31);
+                    }
+
+                    .checkbox{
+                        span{
+                            font-size: pxToRem(14);
+                        }
+                        div{
+                            width: 21px;
+                            height: 21px;
+                        }
+                    }
+                }
+            }
+        }
+        aside{
+            @media (min-width:910px) {
+                flex-shrink: 0;
+                width: 383px;
+
+                .checkout{
+                    &-list{
+                        &-item{
+                            &-image{
+                                width: 134px;
+                                height: 136px;
+                            }
+                            &-label{
+                                font-size: pxToRem(16);
+                            }
+                            &-price{
+                                font-size: pxToRem(16);
+                                small{
+                                    font-size: pxToRem(12);
+                                }
+                            }
+
+                            .counter{
+                                width: 134px;
+                                height: 52px;
+
+                                button{
+                                    width: 24px;
+                                    height: 24px;
+                                }
+                                
+                            }
+                        }
+                    }
+
+                    table{
+                        margin-top: pxToRem(95);
+                        td:first-child{
+                            font-size: pxToRem(18);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .checkout{
     background-color: $grey6;
     border-radius: pxToRem(12);
@@ -38,9 +148,11 @@ header{
     margin-bottom: pxToRem(39);
 
     table{
+        margin-top: pxToRem(88);
         font-size: pxToRem(14);
     }
 }
+
 
 table{
     width: 100%;
@@ -59,6 +171,27 @@ table{
     padding: .75rem;
     vertical-align: top;
     border-top: 1px solid $grey4;
+    }
+}
+
+form {
+    section:nth-child(1){
+        margin-bottom: pxToRem(45);
+    }
+
+    h3{
+        font-size: pxToRem(14);
+        margin-bottom: pxToRem(12);
+    }
+
+    .flex{
+        display: flex;
+        align-items: center;
+        column-gap: pxToRem(23);
+
+        & > label{
+            flex: 1;
+        }
     }
 }
 

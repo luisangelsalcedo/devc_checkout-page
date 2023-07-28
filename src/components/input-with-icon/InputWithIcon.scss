@@ -20,6 +20,7 @@
         font-family: $font-primary;
         flex: 1;
         color: $grey1;
+        width: 100%;
 
         &[type=number]::-webkit-inner-spin-button, 
         &[type=number]::-webkit-outer-spin-button { 
@@ -35,12 +36,14 @@
     &-box{
         border: 1.5px solid $grey3;
         border-radius: pxToRem(12);
-        padding: pxToRem(10);
+        padding: 0 pxToRem(10);
+        height: 40.5px;
         display: flex;
         align-items: center;
 
         svg{
             margin-right: pxToRem(10);
+            width: 18px;
         }
     }
     
